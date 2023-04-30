@@ -1,6 +1,9 @@
-class Room extends Item{
+const { Item } = require("./item");
+
+class Room extends Item {
 
     constructor(name, description) {
+        super()
         this.name = name;
         this.description = description;
         this.exits = {};
@@ -44,11 +47,12 @@ class Room extends Item{
     }
 
     getItemByName(name) {
-        for (let i=0;i<this.items.length;i++){
-            if (this.items[i].name===name)
-            return this.items[i] 
-           }
-       
+        for(let i=0;i<this.items.length;i++){
+            if (this.items[i].name==name)
+            {
+                return this.items[i]
+            }
+        }
     }
 
 }
@@ -56,3 +60,10 @@ class Room extends Item{
 module.exports = {
   Room,
 };
+let item = new Item("rock", "just a simple rock");
+let room = new Room("Test Room", "A test room");
+
+room.items.push(item);
+console.log(room.items.length)
+
+console.log(room.getItemByName("rock"))

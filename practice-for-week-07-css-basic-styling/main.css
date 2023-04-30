@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
+h1 {
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+    margin: 20px;
+    font-weight: 300;
+    text-decoration:none ;
+    color: black ;
+    background-color:  beige;
+}
+
+h2 {
+    font-size: 30px ;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding:10px ;
+    margin: 40px ;
+    font-weight: 100;
+    color:  rgba(7, 7, 7, 0.801);
+    background-color: whitesmoke;
+}
+
+p {
+    font-family: 'Tilt Warp', cursive;
+    font-size:14px ;
+    padding:10px ;
+    margin: 10px 50px ;
+    color: black;
+    background-color: whitesmoke ;
+}
+
+.logo {
+    background-size: cover;
+    background-image: url(https://appacademy.github.io/styleguide/assets/logo/logo-emblem-black-1000.png);
+    background-color: white;
+    height: 300px;
+    width: 300px ;
+    
+}
+.story-box {
+    background-color: whitesmoke ;
+    margin: 10px 50px ;
+
+}

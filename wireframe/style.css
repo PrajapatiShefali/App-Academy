@@ -112,11 +112,10 @@
 }
 .footer div{
     display: inline-block;
-    margin: 3%;
-    padding: 1% 4%;
+    margin:1% 2%;
+    padding: 1% 3%;
     color: black;
     
-    border: solid 2px black;
 }
 .footer .footer-links{
     width: 60%;
@@ -139,7 +138,8 @@
 .footer-nav-links{
     margin: 0%;
     border: 0;
-
+    display: FLEX;
+    JUSTIFY-CONTENT: space-around;
     padding: 0%;
 }
 .footer .links{

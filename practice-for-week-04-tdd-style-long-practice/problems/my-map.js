@@ -6,4 +6,4 @@ function myMap(inputArray, callback) {
   return res 
 }
 
-module.exports = myMap;
+module.exports= myMap;

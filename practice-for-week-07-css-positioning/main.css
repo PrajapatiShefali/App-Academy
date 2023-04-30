@@ -1,0 +1,96 @@
+html, body {
+    font-family: sans-serif;
+}
+
+.container {
+    background-color: #2b2d2f;
+    position: relative;
+}
+
+.element {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100px;
+    height: 280px;
+    font-size: 36px;
+    /* position: relative; */
+}
+
+#yellow-box {
+    background-color: #ffff00;
+        /* relative stlying with respect to .element class
+     position: absolute;
+    bottom: 0;
+    left: 200px;
+    right: ;
+    top:600px ;
+    z-index:0 ; */
+    /* position: absolute;
+    bottom: 0;
+    left: 200px;
+    right: ;
+    top:20px ;
+    z-index:0 ; */
+    /* Sticky 
+    position: ;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0px;
+    z-index: ; */
+    /* fixed styling 
+    position: fixed;
+    bottom: 0;
+    left: ;
+    right: 0;
+    top:20px ;
+    z-index: ; */
+}
+
+#pink-box {
+    background-color: #ff69b4;
+    /* position: absolute;
+    bottom: 0;
+    left: 200px;
+    right: 0;
+    top:50px ;
+    z-index: 1;  */
+    /* sticky styling
+     position: sticky;
+    bottom: 0;
+    left: ;
+    right: 0;
+    top:20px ;
+    z-index: ; */
+}
+
+#blue-box {
+    background-color: #00eeee;
+    /* sticky
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 100px;
+    z-index: ; */
+}
+
+#red-box {
+    background-color: #ff0000;
+    /* position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 70px;
+    z-index: ; */
+}
+
+#orange-box {
+    background-color: #ffa500;
+    /* position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 20px;
+    z-index: ; */
+}
