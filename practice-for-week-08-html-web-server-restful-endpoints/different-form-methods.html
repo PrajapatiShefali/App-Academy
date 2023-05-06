@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Different Form Methods</title>
+</head>
+
+<body>
+  <!-- clicking on this <a> tag will make a GET / request -->
+  <a href="/">Link to Resource</a>
+
+  <!-- submitting this <form> will make a GET / request -->
+  <form action="/" method="GET">
+    <button type="submit">GET</button>
+  </form>
+  <form action="/home" method="GET">
+    <button type="submit">GET home</button>
+  </form>
+  <!-- submitting this <form> will make a POST / request -->
+  <form action="/" method="POST">
+    <button type="submit">POST</button>
+  </form>
+  <form action="/contact" method="POST">
+    <button type="submit">submit contact form</button>
+  </form>
+  <form action="/contact" method="GET">
+    <button type="submit">access contact form</button>
+  </form>
+  <form action="/contact/edit" method="GET">
+    <button type="submit">access edit page for contact form</button>
+  </form>
+  <form action="/contact/create" method="GET">
+    <button type="submit">access create page for contact form</button>
+  </form>
+  <!-- submitting this <form> will make a GET / request -->
+  <form action="/" method="PATCH">
+    <button type="submit">PATCH</button>
+  </form>
+
+  <!-- submitting this <form> will make a GET / request -->
+  <form action="/" method="PUT">
+    <button type="submit">PUT</button>
+  </form>
+
+  <!-- submitting this <form> will make a GET / request -->
+  <form action="/" method="DELETE">
+    <button type="submit">DELETE</button>
+  </form>
+</body>
+
+</html>
