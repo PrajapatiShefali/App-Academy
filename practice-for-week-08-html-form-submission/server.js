@@ -111,15 +111,17 @@ const server = http.createServer((req, res) => {
       cat=req.body
       res.setHeader('Content-Type', 'text/plain')
       res.setHeader('Location','http://localhost:5000/')
-      res.statusCode=201
-
+      res.statusCode=302
+      res.end("Done");
+      return
     }
     if (req.method=='POST' && req.url=='/dog'){
       dog=req.body
       res.setHeader('Content-Type', 'text/plain')
       res.setHeader('Location','http://localhost:5000/')
-      res.statusCode=201
-
+      res.statusCode=302
+      res.end("Done");
+      return 
     }
     res.statusCode = 404;
     res.end("Page Not Found");

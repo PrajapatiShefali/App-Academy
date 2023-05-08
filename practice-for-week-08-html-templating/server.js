@@ -114,11 +114,11 @@ const server = http.createServer((req, res) => {
         const dogId = urlParts[2];
         const dog = dogs.find(dog => dog.dogId == dogId);
         const htmlPage = fs.readFileSync("./views/dog-details.html", 'utf-8');
-        // const resBody = htmlPage.replace(/#{name}/g,dog.name).replace(/#{age}/g,dog.age);
+        const resBody = htmlPage.replace(/#{name}/g,dog.name).replace(/#{age}/g,dog.age);
 
         res.statusCode = 200;
       res.setHeader("Content-Type", "text/html");
-      res.write(htmlPage);
+      res.write(resBody);
       return res.end();
       }
     }
@@ -126,9 +126,23 @@ const server = http.createServer((req, res) => {
     // Phase 4: POST /dogs
     if (req.method === 'POST' && req.url === '/dogs') {
       let id=getNewDogId()
-      let dogobj={name:req.body.name,age:req.body.age,dogId:id}
+      res.setHeader('Content-Type',"x-www-form-urlencoded")
+      res.statusCode=302
+      let resBody=""
+      req.on("data",(data)=>
+        resBody+=data
+      )
+      dogid=getNewDogId()
+      let dogobj={dogId:dogid,name:reqBody.name,age:reqBody.age}
       dogs.push(dogobj)
-      res.write(dogobj)
+      console.log(reqBody,dogobj,"dogobj")
+      console.log("post /dog")
+      
+      res.setHeader("Location","/dogs/"+dogId)
+
+      res.write(resBody)
+      res.end("done")
+      return 
     }
 
     // Phase 5: GET /dogs/:dogId/edit

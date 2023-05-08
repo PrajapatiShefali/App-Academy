@@ -16,9 +16,9 @@ const server = http.createServer((req, res) => {
       res.write(imageFile)
     }
     else if (category=='css'){
-      let imageFile=fs.readFileSync('assets/css/'+file,'utf-8')
+      let cssFile=fs.readFileSync('assets/css/'+file,'utf-8')
       res.setHeader('Content-Type','text/css')
-      res.write(imageFile)
+      res.write(cssFile)
     }
   }
 

@@ -24,7 +24,7 @@ server = http.createServer((req, res) => {
       sendFormPage(req, res); // needs to be called even if the request doesn't have a body
     });
   });
-server=server.listen(5000)
+server=server.listen(5000,()=>console.log("Server is listening on port 5000\n GET /"))
 /******************************************************************************/
 /******************* DO NOT CHANGE THE CODE BELOW THIS LINE *******************/
 
