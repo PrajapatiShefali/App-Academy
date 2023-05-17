@@ -89,7 +89,11 @@ const server = http.createServer((req, res) => {
     // Phase 1: GET /dogs
     if (req.method === 'GET' && req.url === '/dogs') {
       const htmlPage = fs.readFileSync("./views/dogs.html", 'utf-8');
-      const resBody = htmlPage.replace(/#{dogsList}/g, '<li>Fido</li><li>Fluffy</li>');
+      let string=""
+      for(let dog of dogs){
+        string+=`<li>Name: ${dog.name} Age: ${dog.age}</li>`
+      }
+      const resBody = htmlPage.replace(/#{dogsList}/g, string);
       
       res.statusCode = 200;
       res.setHeader("Content-Type", "text/html");
@@ -125,7 +129,6 @@ const server = http.createServer((req, res) => {
 
     // Phase 4: POST /dogs
     if (req.method === 'POST' && req.url === '/dogs') {
-      let id=getNewDogId()
       res.setHeader('Content-Type',"x-www-form-urlencoded")
       res.statusCode=302
       let resBody=""
@@ -133,12 +136,10 @@ const server = http.createServer((req, res) => {
         resBody+=data
       )
       dogid=getNewDogId()
-      let dogobj={dogId:dogid,name:reqBody.name,age:reqBody.age}
+      let dogobj={dogId:dogid,name:req.body.name,age:req.body.age}
       dogs.push(dogobj)
-      console.log(reqBody,dogobj,"dogobj")
-      console.log("post /dog")
       
-      res.setHeader("Location","/dogs/"+dogId)
+      res.setHeader("Location","/dogs/"+dogid)
 
       res.write(resBody)
       res.end("done")
@@ -150,8 +151,14 @@ const server = http.createServer((req, res) => {
       const urlParts = req.url.split('/');
       if (urlParts.length === 4 && urlParts[3] === 'edit') {
         const dogId = urlParts[2];
+        console.log("doif",dogId)
         const dog = dogs.find(dog => dog.dogId == dogId);
-        // Your code here
+        let htmlPage=fs.readFileSync("./views/edit-dog.html",'utf-8')
+        const resBody=htmlPage.replace(/#{name}/g,dog.name).replace(/#{age}/g,dog.age).replace(/#{dogId}/g,dogId);
+        res.statusCode = 200;
+        console.log("resbody",resBody)
+        res.setHeader("Content-Type", "text/html");
+        res.write(resBody);
       }
     }
 
@@ -161,18 +168,29 @@ const server = http.createServer((req, res) => {
       if (urlParts.length === 3) {
         const dogId = urlParts[2];
         const dog = dogs.find(dog => dog.dogId == dogId);
-        // Your code here
+        let resBody=""
+        req.on("data",(data)=>{
+          resBody+=data
+        })
+        console.log("r",resBody,res.body)
+        dog.name=req.body.name
+        dog.age=req.body.age 
+        res.setHeader("Location","/dogs/"+dog.dogId)
+        res.statusCode=302 
+        res.write(resBody)
+        res.end()
+
       }
     }
 
     // No matching endpoint
-    // const htmlPage = fs.readFileSync("./views/error.html", 'utf-8');
-    // const resBody = htmlPage
-    //   .replace(/#{message}/g, 'Page Not Found');
+    const htmlPage = fs.readFileSync("./views/error.html", 'utf-8');
+    const resBody = htmlPage
+      .replace(/#{message}/g, 'Page Not Found');
     
-    // res.statusCode = 404;
-    // res.setHeader("Content-Type", "text/html");
-    // res.write(resBody);
+    res.statusCode = 404;
+    res.setHeader("Content-Type", "text/html");
+    res.write(resBody);
     return res.end();
   });
 });
