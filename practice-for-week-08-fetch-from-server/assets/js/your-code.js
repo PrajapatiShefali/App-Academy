@@ -6,7 +6,7 @@ export function getAllDogs() {
     method:"GET",
     headers:headers,
    };
-   return fetch(url,options)
+   return fetch(url)
 }
 
 export function getDogNumberTwo() {
@@ -17,28 +17,28 @@ export function getDogNumberTwo() {
      method:"GET",
      headers:headers,
     };
-    return fetch(url,options)
+    return fetch(url)
 }
 
 export function postNewDog() {
     const url="/dogs";
-    const headers={"Content-Type": "x-www-form-urlencoded"}
-    const body=URLSearchParams({
+    const headers={"Content-Type": "application/x-www-form-urlencoded"}
+    const bodyparams=new URLSearchParams({
         name:"Rony",
         age:5
     })
     const options={
      method:"POST",
      headers:headers,
-     body:body
+     body:bodyparams
     };
     return fetch(url,options)
 }
 
 export function postNewDogV2(name, age) {
     const url="/dogs";
-    const headers={"Content-Type": "x-www-form-urlencoded"}
-    const body=URLSearchParams({
+    const headers={"Content-Type": "application/x-www-form-urlencoded"}
+    const body=new URLSearchParams({
         name:name,
         age:age
     })
