@@ -1,0 +1,26 @@
+API Server Project
+Event Handling Project
+Tic-Tac-Toe Project
+Catsagram Project
+Express Capstone
+SQL Basics with excercise,Intermediate SQl 
+Capstone Project and advance sql topic (2 days)
+advance topic excercise (2 days)
+Sequelize Foundations (2 days)
+Relationships in Sequelize (2 days)
+Real World Sequelize Applications (2 days)
+Express & SQL Capstone Projects (2 days)
+Web Application Security
+Backend Authentication 
+React Basics ( 2 days)
+React Hooks and Forms (3 days)
+React Context 
+React Jest
+Class Components
+Redux Basics (3 days)
+Redux Thunk (3 days)
+Full stack Project (2 days)
+Docker Basics ( 2 days) 
+Docker Images( 2-3 days)
+Docker compose (2-3 days)
+Microservices Applied ( 2-3 days)
