@@ -70,7 +70,7 @@ const server = http.createServer((req, res) => {
       console.log(val)
       res.end()      
     }
-    else if (req.method=='POST' && req.url.startsWith('/dogs') && req.url.split('/').length==4){
+    else if (req.method=='EDIT' && req.url.startsWith('/dogs') && req.url.split('/').length==4){
       res.statusCode=200;
       console.log(req.url.split('/'))
       Id=req.url.split('/')[2]

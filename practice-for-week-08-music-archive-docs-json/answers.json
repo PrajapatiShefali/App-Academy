@@ -54,10 +54,11 @@
       "headers": {
         "Content-Type":"application/json"
       },
-      "body": {
-        "name": "new artist created",
-        "artistId": 3
+       "body": {
+        "name":"alice"
+
     }
+       
     
     },
     "response": {
@@ -67,9 +68,9 @@
       "statusCode": 201,
       "body": 
       {
-        "name": "new artist created",
+        "name": "alice",
         "artistId": 3
-    }
+      }
     }
   },
   "4": {
@@ -81,8 +82,7 @@
         "Content-Type":"application/json"
       },
       "body": {
-        "name": "artist created was edited now",
-        "artistId": 3
+        "name": "artist created was edited now"
     }
     },
     "response": {
@@ -182,15 +182,7 @@
         "Content-Type":"application/json"
       },
       "body":   {
-        "name": "Red Hot Chili Peppers",
-        "artistId": 7,
-        "albums": [
-            {
-                "name": "Stadium Arcadium",
-                "albumId": 1,
-                "artistId":7
-            }
-        ]
+        "name": "Red Hot Chili Peppers"
     }
     },
     "response": {
@@ -214,16 +206,8 @@
         "Content-Type":"application/json"
       },
       "body": {
-        "name": "Red Hot Chili Peppers",
-        "artistId": 7,
-        "albums": [
-            {
-                "name": "Stadium Arcadium",
-                "albumId": 1,
-                "artistId":7
-            }
-        ]
-    }
+                "name": "Stadium Arcadium"
+              }
     },
     "response": {
       "headers": {
@@ -371,11 +355,8 @@
       {
           "name": "Song Dani California",
           "lyrics": "Getting born in the state of Mississippi\nPapa was a copper, and her mama was a hippy\nIn Alabama she would swing a hammer\nPrice you got to pay when you break the panorama\nShe never knew that there was anything more than poor\nWhat in the world does your company take me for?\nBlack bandanna, sweet Louisiana\nRobbing on a bank in the state of Indiana\nShe's a runner\nRebel, and a stunner\nOn her merry way saying baby, watcha gonna?\nLooking down the barrel of a hot metal forty-five\nJust another way to survive\nCalifornia, rest in peace\nSimultaneous release\nCalifornia, show your teeth\nShe's my priestess\nI'm your priest\nYeah, yeah, yeah\nShe's a lover, baby, and a fighter\nShould've seen it coming when I got a little brighter\nWith a name like Dani California\nDay was gonna come when I was gonna mourn ya\nA little loaded, she was stealing another breath\nI love my baby to death\nCalifornia, rest in peace\nSimultaneous release\nCalifornia, show your teeth\nShe's my priestess\nI'm your priest\nYeah, yeah, yeah\nWho knew the other side of you?\nWho knew that others died to prove?\nToo true to say goodbye to you\nToo true to say, say, say\nPushed the fader, gifted animator\nOne for the now, and eleven for the later\nNever made it up to Minnesota\nNorth Dakota man\nWasn't gunnin' for the quota\nDown in the Badlands she was saving the best for last\nIt only hurts when I laugh\nGone too fast\nCalifornia, rest in peace\nSimultaneous release\nCalifornia, show your teeth\nShe's my priestess\nI'm your priest\nYeah, yeah, yeah\nCalifornia, rest in peace\nSimultaneous release\nCalifornia, show your teeth\nShe's my priestess\nI'm your priest\nYeah, yeah, yeah",
-          "trackNumber": 1,
-          "songId": 1,
-          "createdAt": "2023-05-20T03:40:51.000Z",
-          "updatedAt": "2023-05-20T03:40:51.000Z",
-          "albumId": 1
+          "trackNumber": 1
+         
       }
     },
     "response": {
@@ -403,11 +384,7 @@
       "body":  {
         "name": "Song Dani California name is edited now",
         "lyrics": "Getting born in the state of Mississippi\nPapa was a copper, and her mama was a hippy\nIn Alabama she would swing a hammer\nPrice you got to pay when you break the panorama\nShe never kne",
-        "trackNumber": 1,
-        "songId": 1,
-        "createdAt": "2023-05-20T03:40:51.000Z",
-        "updatedAt": "2023-05-20T03:40:51.000Z",
-        "albumId": 1
+        "trackNumber": 1
     }
     },
     "response": {
